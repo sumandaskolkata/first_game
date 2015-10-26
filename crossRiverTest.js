@@ -24,3 +24,9 @@ test["moveRight moves the selected items from left to right for one item selecte
 
 };
 
+test['isGameOver check wheather currentStatus has more ghost than child in any side'] = function(){
+	var currentStatus={left:{ghost:2,child:1},right:{ghost:1,child:2}};
+	assert.ok(lib.isGameOver(currentStatus));
+	var currentStatus={left:{ghost:1,child:2},right:{ghost:2,child:1}};
+	assert.ok(lib.isGameOver(currentStatus));
+}
