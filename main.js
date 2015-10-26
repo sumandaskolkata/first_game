@@ -1,10 +1,10 @@
 var lib = require('./crossRiver.js').lib;
 var readline = require('readline');
 
-var rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+// var rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
 
 var initial = lib.initial();
 var side = process.argv[2];
