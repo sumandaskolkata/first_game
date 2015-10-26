@@ -6,9 +6,6 @@ lib.initial = function(){
 };
 
 lib.moveToRight = function(move1,move2,initial){
-	if(!move1 && !move2){
-		return "select correct name to move";
-	}
 	if(move2){
 		initial.left[move1]--;
 		initial.left[move2]--;
@@ -23,10 +20,6 @@ lib.moveToRight = function(move1,move2,initial){
 };
 
 lib.moveToLeft = function(move1,move2,initial){
-	if(!move1 && !move2){
-		console.log("select correct name to move")
-		return;
-	}
 	if(move2){
 		initial.left[move1]++;
 		initial.left[move2]++;
@@ -39,7 +32,28 @@ lib.moveToLeft = function(move1,move2,initial){
 	}
 	return initial;
 };
+var checkNoOfGhostAndChild=function(child,ghost){
+	return (child<ghost) && child!=0;
+}
+
 lib.isGameOver=function(currentStatus){
-	return (currentStatus.left.child<currentStatus.left.ghost || 
-		currentStatus.right.child<currentStatus.right.ghost);
+
+	if((checkNoOfGhostAndChild(currentStatus.left.child,currentStatus.left.ghost)) || 
+		checkNoOfGhostAndChild(currentStatus.right.child,currentStatus.right.ghost)){
+			console.log('Game Over');
+			return true;
+		}
+	return false;
 };
+
+lib.isPlayerWin=function(currentStatus){
+	if((currentStatus.right.child + currentStatus.right.ghost == 6)){
+			console.log('The player is win');
+			return true;
+		}
+	return false;
+};
+
+lib.chooseSide=function(count){
+	return (count & 1) ? 'moveToLeft' : 'moveToRight';
+}
