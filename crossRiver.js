@@ -39,3 +39,7 @@ lib.moveToLeft = function(move1,move2,initial){
 	}
 	return initial;
 };
+lib.isGameOver=function(currentStatus){
+	return (currentStatus.left.child<currentStatus.left.ghost || 
+		currentStatus.right.child<currentStatus.right.ghost);
+};
