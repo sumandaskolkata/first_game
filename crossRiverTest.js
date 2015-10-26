@@ -29,4 +29,8 @@ test['isGameOver check wheather currentStatus has more ghost than child in any s
 	assert.ok(lib.isGameOver(currentStatus));
 	var currentStatus={left:{ghost:1,child:2},right:{ghost:2,child:1}};
 	assert.ok(lib.isGameOver(currentStatus));
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 33387f29f1a19f2b5b0f694b0baed67681a2f267
