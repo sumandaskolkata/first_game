@@ -37,7 +37,6 @@ var checkNoOfGhostAndChild=function(child,ghost){
 }
 
 lib.isGameOver=function(currentStatus){
-
 	if((checkNoOfGhostAndChild(currentStatus.left.child,currentStatus.left.ghost)) || 
 		checkNoOfGhostAndChild(currentStatus.right.child,currentStatus.right.ghost)){
 			console.log('Game Over');
