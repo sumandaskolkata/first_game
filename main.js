@@ -7,9 +7,22 @@ var rl = readline.createInterface({
 });
 
 var initial = lib.initial();
-var side = process.argv[2];
-var move1 = process.argv[3];
-var move2 = process.argv[4];
-
-var a = lib[side](move1,move2,initial)
-console.log(a)
+var count=0;
+console.log('********************************************************')
+var main=function(){
+	rl.question('Please give first move: ',function(move1){
+		rl.question('Please give second move: ',function(move2){
+			var side = (count & 1) ? 'moveToLeft' : 'moveToRight';
+			currentstatus = lib[side](move1,move2,initial);
+			console.log(currentstatus);
+			if(lib.isGameOver(currentstatus) || lib.isPlayerWin(currentstatus)){
+				console.log('Game Over');
+				rl.close();
+				return;
+			}
+			count++;
+			rl.resume(main());
+		})
+	})
+}
+main();
