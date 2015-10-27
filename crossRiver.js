@@ -5,6 +5,12 @@ lib.initial = function(){
 	return {left: {child:3,ghost:3},right: {child:0,ghost:0}};
 };
 
+lib.instruction = function(){
+	return ["Instruction to Play:",
+			"Please Help the 3 child and 3 ghost to move to the other side of the lake.",
+		  	"notice that: when there is on one side more ghost then child, the game is over.\n"].join('\n')
+};
+
 lib.moveToRight = function(move1,move2,initial){
 	if(move2){
 		initial.left[move1]--;
@@ -54,5 +60,5 @@ lib.isPlayerWin=function(currentStatus){
 };
 
 lib.chooseSide=function(count){
-	return (count & 1) ? 'moveToLeft' : 'moveToRight';
+	return (count == 1) ? 'moveToLeft' : 'moveToRight';
 }

@@ -1,6 +1,11 @@
 var lib = require('./crossRiver.js').lib;
 var readline = require('readline');
 
+var instruction = process.argv[2]
+if(instruction){
+	console.log(lib.instruction())
+};
+
 var rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -11,9 +16,17 @@ console.log('The initial status is : \n',initial);
 var count=0;
 
 
+
+var leftToRight1 = "Please give first move, From left To Right: ";
+var leftToRight2 = "Please give second move, From left To Right(optional): ";
+var rightToLeft1 = "Please give first move, From  Right To left: ";
+var rightToLeft2 = "Please give second move, From  Right To left(optional): ";
+
+
+
 var main=function(){
-	rl.question('Please give first move: ',function(move1){
-		rl.question('Please give second move: ',function(move2){
+	rl.question(count ? rightToLeft1 : leftToRight1,function(move1){
+		rl.question(count ? rightToLeft2 : leftToRight2,function(move2){
 			if(!move1 && !move2)
 				console.log('\tPlease give a valid input');
 			else{
@@ -24,7 +37,7 @@ var main=function(){
 					rl.close();
 					return;
 				}
-				count++;
+				count = 1 - count;
 			}
 			rl.resume(main());
 		})
