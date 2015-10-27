@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Cross The River</title>
+<style>
+body
+{
+    background:#90D4BD;
+    color:#FFF;
+}
+canvas
+{
+    background:#FFF;
+}
+#controls
+{
+    position:absolute;
+    top:0;
+    right:0;
+    margin:10px;
+}
+</style>
+<script type="text/javascript">
+var CrossRiver = window.CrossRiver || {};
+// function launchFullscreen(element) {
+//   if(element.requestFullscreen) {
+//     element.requestFullscreen();
+//   } else if(element.mozRequestFullScreen) {
+//     element.mozRequestFullScreen();
+//   } else if(element.webkitRequestFullscreen) {
+//     element.webkitRequestFullscreen();
+//   } else if(element.msRequestFullscreen) {
+//     element.msRequestFullscreen();
+//   }
+// }
+window.onload = function(){
+    document.addEventListener("fullscreenchange", function(){CrossRiver.game.adjust();});
+    document.addEventListener("webkitfullscreenchange", function(){CrossRiver.game.adjust();});
+    document.addEventListener("mozfullscreenchange", function(){CrossRiver.game.adjust();});
+    document.addEventListener("MSFullscreenChange", function(){CrossRiver.game.adjust();});
+
+        
+    CrossRiver.game = (function()
+    {
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        var status=false;
+        var old_direction = 'right';
+        var direction = 'right';
+        function adjust()
+        {
+            if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement )
+            {
+                canvas.width=window.innerWidth;
+                canvas.height=window.innerHeight;
+                control.style.display='none';
+            }
+            else
+            {
+                canvas.width=850;
+                canvas.height=600;
+                control.style.display='inline';
+            }
+        }
+
+    }
+}
+</script>
+</head>
+<body>
+<canvas width="1000" height="600" id="canvas" style="border:1px solid #333;" onclick="CrossRiver.game.begin();">
+</canvas>
+<div id="controls" style="float:right; text-align:center;">
+    <input type="button" id="pause" value="Play" onClick="CrossRiver.game.pause(this);" accesskey="p">
+    <input type="button" id="restart" value="Restart" onClick="CrossRiver.game.restart();">
+    <br/><br/>
+    <input type="button" id="fullscreen" value="Play Fullscreen" onClick="CrossRiver.game.fullscreen();">
+    <br/><br/>
+    
+</div>
+</body>
+</html>
