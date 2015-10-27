@@ -7,6 +7,10 @@ var rl = readline.createInterface({
 });
 
 var initial = lib.initial();
+var instruction = ["Instruction to Play:",
+				  "Please Help the 3 child and 3 ghost to move to the other side of the lake.",
+				  "notice that: when there is on one side more ghost then child, the game is over.\n"].join('\n')
+console.log(instruction);
 console.log('The initial status is : \n',initial);
 var count=0;
 
