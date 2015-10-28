@@ -11,27 +11,27 @@ var rl = readline.createInterface({
   output: process.stdout
 });
 
-var initial = lib.initial();
-console.log('The initial status is : \n',initial);
+var currentstatus = lib.initial();
+console.log('The initial status is : \n',currentstatus);
 var count=0;
 
-
-
-var leftToRight1 = "Please give first move, From left To Right: ";
-var leftToRight2 = "Please give second move, From left To Right(optional): ";
-var rightToLeft1 = "Please give first move, From  Right To left: ";
-var rightToLeft2 = "Please give second move, From  Right To left(optional): ";
-
-
+var leftToRight1 = "Please give first move, from left To right: ";
+var leftToRight2 = "Please give second move, from left To right (optional): ";
+var rightToLeft1 = "Please give first move, from  right To left: ";
+var rightToLeft2 = "Please give second move, from  right To left (optional): ";
 
 var main=function(){
 	rl.question(count ? rightToLeft1 : leftToRight1,function(move1){
 		rl.question(count ? rightToLeft2 : leftToRight2,function(move2){
-			if(!move1 && !move2)
+			move1=move1.trim().toLowerCase();
+			move2=move2.trim().toLowerCase();
+
+			var side = lib.chooseSide(count);
+			var bank = (lib.chooseSide(1-count)).split('moveTo')[1].toLowerCase();
+			if(lib.isCurrentMoveInvalid(move1,move2,currentstatus,bank))
 				console.log('\tPlease give a valid input');
 			else{
-				var side = lib.chooseSide(count);
-				currentstatus = lib[side](move1,move2,initial);
+				currentstatus = lib[side](move1,move2,currentstatus);
 				console.log(currentstatus);
 				if(lib.isGameOver(currentstatus) || lib.isPlayerWin(currentstatus)){
 					rl.close();

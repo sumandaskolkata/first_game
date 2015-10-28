@@ -61,4 +61,18 @@ lib.isPlayerWin=function(currentStatus){
 
 lib.chooseSide=function(count){
 	return (count == 1) ? 'moveToLeft' : 'moveToRight';
-}
+};
+
+var isBothMoveAreSame=function(move1,move2,currentstatus,bank){
+	return (move1==move2 && currentstatus[bank][move1]<=1)
+};
+
+var isCurrentValueEqualToZero=function(currentstatus,bank,move){
+	return currentstatus[bank][move]==0;
+};
+
+lib.isCurrentMoveInvalid=function(move1,move2,currentstatus,bank){
+	return ((!move1 && !move2) || isBothMoveAreSame(move1,move2,currentstatus,bank))||
+				isCurrentValueEqualToZero(currentstatus,bank,move1) ||
+					 isCurrentValueEqualToZero(currentstatus,bank,move2);
+};
