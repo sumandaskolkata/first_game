@@ -6,6 +6,10 @@ div {
 	text-align: center;
 }
 
+body {
+    background-color: lightyellow;
+}
+
 button {
   border-radius: 4px;
   background-color: #f4511e;
