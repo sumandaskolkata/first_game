@@ -1,10 +1,42 @@
 h1 {
 	text-align: center;
 }
+.game {
+	height: 700px;
+	width: 90%;
+	border: 2px solid black;
+	margin: 0 auto;
+	background-color: cornsilk;
+}
+.leftLand {
+    height: 267px;
+    width: 25%;
+    border: 2px solid black;
+    bottom: 0;
+    position: absolute;
+    top: 513px;
+		background-color: #4ACC55;
+}
 
-.main {
-	margin: auto;
-    width: 40%;
-    border: 3px solid #73AD21;
-    padding: 300px;
+.rightLand {
+    height: 267px;
+    width: 25%;
+    border: 2px solid black;
+    bottom: 0;
+    right: 0px;
+    position: absolute;
+    top: 513px;
+    margin-right: 89px;
+		background-color: #4ACC55;
+
+}
+.river {
+    height: 203px;
+    width: 652px;
+    border: 2px solid black;
+    bottom: 0;
+    position: absolute;
+    top: 577px;
+    margin-left: 422px;
+		background-color:lightblue;
 }
