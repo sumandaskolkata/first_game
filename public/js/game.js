@@ -16,7 +16,7 @@ var generateMan = function(num){
 var updateStatus = function(data){
 	console.log(data);
 	if(data.manRight != 0 && data.ghostRight != 0){
-		$('.leftLand').html(generateMan(data.manRight));
+		$('.leftPosition').html(generateMan(data.manRight));
 	}
 };
 

@@ -15,7 +15,7 @@ h1 {
     bottom: 0;
     position: absolute;
     top: 513px;
-		background-color: #4ACC55;
+	background-color: #4ACC55;
 }
 
 .rightLand {
@@ -27,7 +27,7 @@ h1 {
     position: absolute;
     top: 513px;
     margin-right: 89px;
-		background-color: #4ACC55;
+	background-color: #4ACC55;
 
 }
 .river {
@@ -38,5 +38,27 @@ h1 {
     position: absolute;
     top: 577px;
     margin-left: 422px;
-		background-color:lightblue;
+	background-color:lightblue;
 }
+
+.leftPosition {
+    height: 179px;
+    width: 25%;
+    bottom: 0;
+    position: absolute;
+    top: 330px;
+    background-color: #FFF8DC;
+}
+
+.rightPosition {
+   height: 179px;
+    width: 25%;
+    bottom: 0;
+    right: 0px;
+    position: absolute;
+    top: 330px;
+    margin-right: 89px;
+    background-color: #FFF8DC;
+}
+
+
