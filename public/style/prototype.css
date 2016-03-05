@@ -1,0 +1,49 @@
+.game{
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+}
+
+.upper-part{
+	background-color: skyblue;
+	width: 100%;
+	height: 500px;
+}
+
+.lower-part{
+	background-color: purple;
+	width: 100%;
+	height: 50%;
+}
+
+.right-bank{
+	width: 25%;
+	height: 375px;
+	background-color: orange;
+	float: left;
+}
+
+.left-bank{
+	width: 25%;
+	height: 375px;
+	background-color: orange;
+	float: left;
+}
+
+.river-valey{
+	width: 50%;
+	height: 375px;
+	float: left;
+}
+
+.river-space{
+	width: 100%;
+	height: 30%;
+	background-color: skyblue;
+}
+
+.water{
+	height: 70%;
+	width: 100%;
+	background-color: blue;
+}
