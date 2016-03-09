@@ -13,11 +13,24 @@ var generateMan = function(num){
 	return data.map(toManHTML).join('\r\n');
 }
 
-var updateStatus = function(data){
-	console.log(data);
-	if(data.manRight != 0 && data.ghostRight != 0){
-		$('.leftPosition').html(generateMan(data.manRight));
+var toGhostHTML = function(ghost){
+	return cannibalsTemplate(ghost);
+}
+
+var generateGhost = function(num){
+	var data = [];
+	for(var i=0;i<num;i++){
+		data.push(i);
 	}
+	return data.map(toGhostHTML).join('\r\n');
+}
+
+var updateStatus = function(data){
+	$('.forRightMen').html(generateMan(data.manRight));
+	$('.forRightGhost').html(generateGhost(data.ghostRight));
+	$('.forLeftMen').html(generateMan(data.manLeft));
+	$('.forLeftGhost').html(generateGhost(data.ghostLeft));
+
 };
 
 var getStatus = function(){

@@ -1,64 +1,73 @@
 h1 {
-	text-align: center;
+    text-align: center;
 }
-.game {
-	height: 700px;
-	width: 90%;
-	border: 2px solid black;
-	margin: 0 auto;
-	background-color: cornsilk;
+
+.game{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    bottom: 0;
+    background-color: cornsilk;
 }
-.leftLand {
-    height: 267px;
+
+.upper-part{
+    background-color: skyblue;
+    width: 100%;
+    height: 400px;
+}
+
+.lower-part{
+    background-color: purple;
+    width: 100%;
+    height: 50%;
+}
+
+.right-bank{
     width: 25%;
-    border: 2px solid black;
-    bottom: 0;
-    position: absolute;
-    top: 513px;
-	background-color: #4ACC55;
+    height: 375px;
+    background-color: orange;
+    float: left;
 }
 
-.rightLand {
-    height: 267px;
+.left-bank{
     width: 25%;
-    border: 2px solid black;
-    bottom: 0;
-    right: 0px;
-    position: absolute;
-    top: 513px;
-    margin-right: 89px;
-	background-color: #4ACC55;
-
-}
-.river {
-    height: 203px;
-    width: 652px;
-    border: 2px solid black;
-    bottom: 0;
-    position: absolute;
-    top: 577px;
-    margin-left: 422px;
-	background-color:lightblue;
+    height: 375px;
+    background-color: orange;
+    float: left;
 }
 
-.leftPosition {
-    height: 179px;
-    width: 25%;
-    bottom: 0;
-    position: absolute;
-    top: 40%;
-    background-color: #FFF8DC;
+.river-valey{
+    width: 50%;
+    height: 375px;
+    float: left;
 }
 
-.rightPosition {
-   height: 179px;
-    width: 25%;
-    bottom: 0;
-    right: 0px;
-    position: absolute;
-    top: 330px;
-    margin-right: 89px;
-    background-color: #FFF8DC;
+.river-space{
+    width: 100%;
+    height: 30%;
+    background-color: skyblue;
+}
+
+.water{
+    height: 70%;
+    width: 100%;
+    background-color: blue;
+}
+
+.forRightMen {
+    float: left;
 }
 
 
+.forRightGhost {
+    float: left;
+}
+
+.forLeftMen {
+    float: left;
+}
+
+
+.forLeftGhost {
+    float: left;
+}
